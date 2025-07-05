@@ -1,0 +1,85 @@
+<!-- experience.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience - Yessica Trujillo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">Yessica Trujillo</a>
+      <ul class="nav-links">
+        <li><a href="about.html" target="_blank">About me</a></li>
+        <li><a href="education.html" target="_blank">Education</a></li>
+        <li><a href="projects.html" target="_blank">Projects</a></li>
+        <li><a href="experience.html" target="_blank">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="experience">
+      <h1>Experience</h1>
+      <p>Descripción de tu experiencia laboral y logros.</p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+/* css/style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+.navbar {
+  background-color: #1a3e60;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .brand {
+  color: #fff;
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  transition: background 0.2s;
+}
+.navbar .nav-links li a:hover {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+main {
+  padding-top: 4rem;
+  padding: 2rem;
+}
