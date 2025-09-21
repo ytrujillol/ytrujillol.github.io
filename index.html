@@ -10,34 +10,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      /* Paleta verde */
-      --bg: #08120d;           /* fondo oscuro verdoso */
-      --surface: #0e1a14;      /* panel principal */
-      --elev: #12231b;         /* panel elevado */
-      --text: #eff8f3;         /* texto principal */
-      --muted:#b7cec1;         /* texto secundario */
-      --line: #1d3a2d;         /* bordes */
-      --accent:#6ee7b7;        /* verde menta */
-      --accent-2:#34d399;      /* verde */
-      --danger:#ff6b6b;
+      /* Paleta VERDE — TEMA CLARO */
+      --bg: #f7faf8;           /* fondo claro */
+      --surface: #ffffff;      /* panel principal */
+      --elev: #f1f6f3;         /* panel elevado */
+      --text: #111827;         /* texto principal */
+      --muted:#5b6b65;         /* texto secundario */
+      --line: #e3efe8;         /* bordes suaves verdes */
+      --accent:#16a34a;        /* verde */
+      --accent-2:#34d399;      /* verde menta */
+      --danger:#ef4444;
       --radius-lg:18px; --radius-md:12px; --radius-sm:10px;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --shadow: 0 8px 28px rgba(16, 185, 129, .08);
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; background:
-        radial-gradient(1200px 600px at 100% -10%, rgba(110,231,183,.10), transparent 40%),
-        radial-gradient(1000px 500px at -10% 120%, rgba(52,211,153,.10), transparent 40%),
+      margin:0; 
+      background:
+        radial-gradient(900px 420px at 110% -10%, rgba(52,211,153,.12), transparent 40%),
+        radial-gradient(780px 360px at -10% 120%, rgba(134,239,172,.12), transparent 45%),
         var(--bg);
-      color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text); 
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       -webkit-font-smoothing:antialiased; line-height:1.6;
     }
 
     /* NAV */
-    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
-         background:rgba(8,18,13,.65); border-bottom:1px solid var(--line)}
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(130%) blur(8px);
+         background:rgba(255,255,255,.75); border-bottom:1px solid var(--line)}
     .nav .wrap{max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; gap:20px}
     .logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700}
     .logo .flag{font-size:18px}
@@ -46,25 +48,29 @@
     .navlinks a{color:var(--muted); text-decoration:none; font-weight:500}
     .navlinks a:hover{color:var(--text)}
     .hamb{display:none; margin-left:auto; cursor:pointer; font-size:22px}
-    #lang{margin-left:8px; background:var(--elev); color:var(--text); border:1px solid var(--line);
+    #lang{margin-left:8px; background:var(--surface); color:var(--text); border:1px solid var(--line);
           border-radius:10px; padding:6px 10px}
 
     /* HERO */
     .hero{max-width:1200px; margin:0 auto; padding:48px 20px 24px; display:grid; gap:22px; align-items:center}
-    .hero-card{background:linear-gradient(180deg, rgba(110,231,183,.10), rgba(52,211,153,.10)), var(--surface);
-               border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:var(--shadow)}
+    .hero-card{
+      background:
+        linear-gradient(180deg, rgba(16,163,74,.08), rgba(52,211,153,.08)),
+        var(--surface);
+      border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:var(--shadow)
+    }
     .hero h1{margin:0 0 6px; font-size: clamp(28px, 5vw, 40px)}
     .hero .subtitle{margin:0 0 14px; color:var(--muted); font-weight:500}
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
-    .chip{background:#13241b; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-size:14px; color:#e4f4ec}
+    .chip{background:#ecf8f1; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-size:14px; color:#0f5132}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
-         background:var(--elev); color:var(--text); text-decoration:none; font-weight:600}
-    .btn.primary{background:linear-gradient(90deg, var(--accent), var(--accent-2)); color:#052016}
+         background:var(--surface); color:var(--text); text-decoration:none; font-weight:600}
+    .btn.primary{background:linear-gradient(90deg, var(--accent-2), #86efac); color:#064e3b; border-color:transparent}
 
     /* SECTIONS */
     .section{max-width:1200px; margin:18px auto; padding:0 20px}
-    .title{display:flex; align-items:center; gap:10px; font-size:20px; margin:0 0 14px}
+    .title{display:flex; align-items:center; gap:10px; font-size:20px; margin:0 0 14px; color:var(--text)}
     .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 18px var(--accent)}
     .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:20px}
     .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:16px}
@@ -72,18 +78,18 @@
     .col-12{grid-column: span 12}
 
     .list{list-style:none; margin:0; padding:0}
-    .list li{background:#12231b; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin:6px 0}
+    .list li{background:#f6fbf8; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin:6px 0}
 
     /* TIMELINE */
     .timeline{position:relative}
-    .timeline::before{content:""; position:absolute; left:14px; top:0; bottom:0; width:2px; background:#1b3429}
+    .timeline::before{content:""; position:absolute; left:14px; top:0; bottom:0; width:2px; background:#d8efe4}
     .t{position:relative; padding-left:42px; margin:18px 0}
     .t::before{content:""; position:absolute; left:7px; top:6px; width:16px; height:16px; border-radius:50%;
-               background:var(--surface); border:2px solid var(--accent-2); box-shadow:0 0 0 4px rgba(52,211,153,.10)}
-    .t h3{margin:0; font-size:16px}
+               background:var(--surface); border:2px solid var(--accent-2); box-shadow:0 0 0 6px rgba(52,211,153,.12)}
+    .t h3{margin:0; font-size:16px; color:#0f5132}
     .t .meta{display:flex; gap:8px; flex-wrap:wrap; color:var(--muted); font-size:14px}
     .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .tag{font-size:12px; padding:6px 10px; background:#112019; border:1px solid var(--line); border-radius:999px; color:#dfe6ee}
+    .tag{font-size:12px; padding:6px 10px; background:#eef7f1; border:1px solid var(--line); border-radius:999px; color:#065f46}
 
     /* FOOTER */
     footer{max-width:1200px; margin:30px auto 24px; padding:0 20px; text-align:center; color:var(--muted)}
@@ -182,99 +188,70 @@
 
   <!-- EXPERIENCIA PROFESIONAL -->
   <section id="experiencia" class="section">
-  <h2 class="title"><span class="dot"></span> Experiencia Profesional</h2>
+    <h2 class="title"><span class="dot"></span> Experiencia Profesional</h2>
+    <div class="card timeline">
 
-  <div class="card timeline">
-
-    <!-- Analista de Datos Junior (2025–Presente) -->
-    <div class="t">
-      <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
-      <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Septiembre 2025 — Presente</span></div>
-      <p>
-        Investigadora en el desarrollo de un modelo <strong>GIS–MCDA</strong> que integra datos oficiales de
-        <strong>IDECA</strong> y entidades distritales para cuantificar la oferta de <strong>biomasa urbana</strong>
-        (podas, plazas de mercado, colegios). El trabajo abarca:
-      </p>
-      <ul class="list">
-        <li>Estimación del <strong>potencial energético</strong> de residuos orgánicos.</li>
-        <li>Mapeo de <strong>zonas idóneas</strong> para soluciones de <strong>biogás comunitario</strong>.</li>
-        <li>Formulación de <strong>alternativas tecnológicas</strong> con enfoque en sostenibilidad, reducción de emisiones y beneficio social.</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">GIS</span><span class="tag">MCDA</span><span class="tag">IDECA</span><span class="tag">Biogás</span>
+      <div class="t">
+        <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Septiembre 2025 — Presente</span></div>
+        <p>Investigadora en el desarrollo de un modelo <strong>GIS–MCDA</strong> que integra datos oficiales de <strong>IDECA</strong> y entidades distritales para cuantificar la oferta de <strong>biomasa urbana</strong> (podas, plazas de mercado, colegios).</p>
+        <ul class="list">
+          <li>Estimación del <strong>potencial energético</strong> de residuos orgánicos.</li>
+          <li>Mapeo de <strong>zonas idóneas</strong> para <strong>biogás comunitario</strong>.</li>
+          <li>Alternativas tecnológicas con enfoque en sostenibilidad, reducción de emisiones y beneficio social.</li>
+        </ul>
+        <div class="tags"><span class="tag">GIS</span><span class="tag">MCDA</span><span class="tag">IDECA</span><span class="tag">Biogás</span></div>
       </div>
-    </div>
 
-    <!-- Tutora (Grupos de Estudio Autónomo) -->
-    <div class="t">
-      <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
-      <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Agosto 2025 — Presente</span></div>
-      <p>
-        Estudiante auxiliar en los <strong>Grupos de Estudio Autónomo</strong>. Brindo apoyo en asignaturas básicas de matemáticas a estudiantes de todos los programas de pregrado.
-      </p>
-      <ul class="list">
-        <li>Orientación personalizada según necesidades y nivel de cada estudiante.</li>
-        <li>Diseño de material de apoyo y estrategias de <strong>aprendizaje activo</strong>.</li>
-        <li>Participación en programa de <strong>capacitación pedagógica</strong> para fortalecer la tutoría.</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Tutoría</span><span class="tag">Didáctica</span><span class="tag">Acompañamiento</span>
+      <div class="t">
+        <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Agosto 2025 — Presente</span></div>
+        <p>Estudiante auxiliar en <strong>Grupos de Estudio Autónomo</strong>, brindando apoyo en asignaturas básicas a estudiantes de diversos programas.</p>
+        <ul class="list">
+          <li>Orientación personalizada y diseño de material de apoyo.</li>
+          <li>Estrategias de <strong>aprendizaje activo</strong>.</li>
+          <li>Capacitación pedagógica estructurada.</li>
+        </ul>
+        <div class="tags"><span class="tag">Tutoría</span><span class="tag">Didáctica</span><span class="tag">Acompañamiento</span></div>
       </div>
-    </div>
 
-    <!-- Tutora (Nivelatorios) -->
-    <div class="t">
-      <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
-      <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Abril 2025 — Agosto 2025</span></div>
-      <p>
-        Estudiante auxiliar en cursos nivelatorios de <strong>matemáticas básicas</strong>.
-      </p>
-      <ul class="list">
-        <li>Tutorías personalizadas y apoyo en aula.</li>
-        <li>Orientación académica y refuerzo de contenidos clave.</li>
-        <li>Trabajo coordinado con docentes para alinear objetivos y evaluaciones.</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Nivelatorios</span><span class="tag">Apoyo en aula</span><span class="tag">Acompañamiento</span>
+      <div class="t">
+        <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Abril 2025 — Agosto 2025</span></div>
+        <p>Estudiante auxiliar en cursos nivelatorios de <strong>matemáticas básicas</strong>.</p>
+        <ul class="list">
+          <li>Tutorías personalizadas y apoyo en aula.</li>
+          <li>Refuerzo de contenidos clave y coordinación con docentes.</li>
+        </ul>
+        <div class="tags"><span class="tag">Nivelatorios</span><span class="tag">Apoyo en aula</span><span class="tag">Acompañamiento</span></div>
       </div>
-    </div>
 
-    <!-- Analista de Datos Junior (La Mojana) -->
-    <div class="t">
-      <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
-      <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Septiembre 2024 — Diciembre 2024</span></div>
-      <p>
-        Estudiante auxiliar en el proyecto <em>“Modelo matemático para la gestión del agua en La Mojana”</em>.
-      </p>
-      <ul class="list">
-        <li>Desarrollo de modelos de <strong>IA basados en grafos</strong>.</li>
-        <li>Integración de <strong>datos climáticos</strong> con <strong>Python</strong> y servicios en la nube.</li>
-        <li>Apoyo en análisis, <strong>documentación técnica</strong> y revisión bibliográfica.</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Graph ML</span><span class="tag">Python</span><span class="tag">Cloud</span>
+      <div class="t">
+        <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Septiembre 2024 — Diciembre 2024</span></div>
+        <p>Proyecto <em>“Modelo matemático para la gestión del agua en La Mojana”</em>.</p>
+        <ul class="list">
+          <li>Modelos de <strong>IA basados en grafos</strong>.</li>
+          <li>Integración de <strong>datos climáticos</strong> con <strong>Python</strong> y nube.</li>
+          <li>Análisis, documentación técnica y revisión bibliográfica.</li>
+        </ul>
+        <div class="tags"><span class="tag">Graph ML</span><span class="tag">Python</span><span class="tag">Cloud</span></div>
       </div>
-    </div>
 
-    <!-- Programadora Junior en Julia -->
-    <div class="t">
-      <h3>Programadora Junior en Julia — Universidad Nacional de Colombia</h3>
-      <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Noviembre 2023 — Septiembre 2024</span></div>
-      <p>
-        Estudiante auxiliar en el <strong>Laboratorio Virtual de Matemáticas y Ciencias de la Computación</strong> (Departamento de Matemáticas).
-      </p>
-      <ul class="list">
-        <li>Desarrollo de la <strong>página web del laboratorio</strong> y mantenimiento de contenidos.</li>
-        <li>Creación de <strong>cuadernos en Julia</strong> como material complementario para cursos.</li>
-        <li>Sitio: <a href="https://labmatecc.github.io/" target="_blank" rel="noopener">labmatecc.github.io</a></li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Julia</span><span class="tag">Docencia</span><span class="tag">Web</span>
+      <div class="t">
+        <h3>Programadora Junior en Julia — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Noviembre 2023 — Septiembre 2024</span></div>
+        <p><strong>Laboratorio Virtual de Matemáticas y Ciencias de la Computación</strong> (Departamento de Matemáticas).</p>
+        <ul class="list">
+          <li>Desarrollo de la <strong>página web del laboratorio</strong> y mantenimiento.</li>
+          <li>Cuadernos en <strong>Julia</strong> como material docente.</li>
+          <li>Sitio: <a href="https://labmatecc.github.io/" target="_blank" rel="noopener">labmatecc.github.io</a></li>
+        </ul>
+        <div class="tags"><span class="tag">Julia</span><span class="tag">Docencia</span><span class="tag">Web</span></div>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- INVESTIGACIÓN -->
   <section id="investigacion" class="section">
@@ -283,12 +260,12 @@
       <div class="t">
         <h3 data-i18n="res.role1">Asistente de Investigación — Seminario de procesamiento de imágenes</h3>
         <div class="meta"><span>Universidad Nacional de Colombia</span><span>•</span><span data-i18n="res.role1When">Octubre 2024 — Presente</span></div>
-        <p data-i18n="res.role1Desc">Image inpainting, variación total y métodos de reconstrucción/transformación; combinación de teoría matemática con implementación en Julia y Python.</p>
+        <p data-i18n="res.role1Desc">Image inpainting, variación total y métodos de reconstrucción/transformación; teoría + implementación en Julia y Python.</p>
       </div>
       <div class="t">
         <h3 data-i18n="res.role2">Asistente de Investigación — Grupo de computación científica</h3>
         <div class="meta"><span>Universidad Nacional de Colombia</span><span>•</span><span data-i18n="res.role2When">Agosto 2023 — Agosto 2024</span></div>
-        <p data-i18n="res.role2Desc">Métodos multiescala generalizados (Efendiev &amp; Galvis, 2009) aplicados a problemas prácticos; nuevas variantes para mejorar la aproximación.</p>
+        <p data-i18n="res.role2Desc">Métodos multiescala generalizados (Efendiev &amp; Galvis, 2009) aplicados a problemas prácticos; variantes para mejorar la aproximación.</p>
       </div>
     </div>
   </section>
@@ -300,12 +277,12 @@
       <div class="t">
         <h3 data-i18n="vol.role1">Tutora — Círculos Matemáticos</h3>
         <div class="meta"><span>Universidad Nacional de Colombia — Bogotá</span><span>•</span><span data-i18n="vol.role1When">Marzo 2023 — Junio 2024</span></div>
-        <p data-i18n="vol.role1Desc">Tutorías a estudiantes de bachillerato (Sociedad Colombiana de Matemáticas), fomentando interés y comprensión de las matemáticas.</p>
+        <p data-i18n="vol.role1Desc">Tutorías a estudiantes de bachillerato (Sociedad Colombiana de Matemáticas).</p>
       </div>
       <div class="t">
         <h3 data-i18n="vol.role2">Tutora de Matemáticas — Programa de Apoyo Académico Covid-19</h3>
         <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span data-i18n="vol.role2When">Marzo 2021 — Febrero 2022</span></div>
-        <p data-i18n="vol.role2Desc">Tutorías personalizadas en Matemáticas Básicas, Cálculo (Dif./Int./Vectorial) y EDO.</p>
+        <p data-i18n="vol.role2Desc">Tutorías en Matemáticas Básicas, Cálculo (Dif./Int./Vectorial) y EDO.</p>
       </div>
     </div>
   </section>
@@ -317,22 +294,22 @@
       <div class="col-6 card">
         <h3>CIMPA — Mathematical Models in Biology and PDEs</h3>
         <p class="muted" data-i18n="talks.habanaWhen">La Habana, Cuba — Junio 09–20, 2025</p>
-        <p data-i18n="talks.habanaDesc">Fundamentos matemáticos de modelos biológicos (FEM, volúmenes finitos) con prácticas.</p>
+        <p data-i18n="talks.habanaDesc">Fundamentos de modelos biológicos (FEM, volúmenes finitos) con prácticas.</p>
       </div>
       <div class="col-6 card">
         <h3>AI Day</h3>
         <p class="muted" data-i18n="talks.aiWhen">Bogotá, Colombia — Abril 03, 2025</p>
-        <p data-i18n="talks.aiDesc">Avances y tendencias en IA; charlas y networking profesional.</p>
+        <p data-i18n="talks.aiDesc">Avances y tendencias en IA; charlas y networking.</p>
       </div>
       <div class="col-6 card">
         <h3>MAPI 3</h3>
         <p class="muted" data-i18n="talks.mapiWhen">Bucaramanga, Colombia — Junio 12–14, 2024</p>
-        <p data-i18n="talks.mapiDesc">Charla: “Soluciones al problema de difusión con interfaz fractal de la curva de Koch”.</p>
+        <p data-i18n="talks.mapiDesc">“Soluciones al problema de difusión con interfaz fractal de la curva de Koch”.</p>
       </div>
       <div class="col-6 card">
         <h3>CIMPA — Isogenies &amp; Cryptography</h3>
         <p class="muted" data-i18n="talks.popayanWhen">Popayán, Colombia — Julio 24 – Agosto 04, 2023</p>
-        <p data-i18n="talks.popayanDesc">Fundamentos de isogenias en curvas elípticas y su implementación en criptografía.</p>
+        <p data-i18n="talks.popayanDesc">Isogenias en curvas elípticas y su implementación en criptografía.</p>
       </div>
     </div>
   </section>
@@ -352,12 +329,12 @@
       navlinks.style.display = open ? 'none' : 'flex';
       navlinks.style.flexDirection = 'column';
       navlinks.style.gap = '12px';
-      navlinks.style.background = 'rgba(8,18,13,.95)';
+      navlinks.style.background = 'rgba(255,255,255,.97)'; // claro
       navlinks.style.position = 'absolute';
       navlinks.style.top = '56px';
       navlinks.style.right = '74px';
       navlinks.style.padding = '12px 14px';
-      navlinks.style.border = '1px solid var(--line)';
+      navlinks.style.border = '1px solid getComputedStyle(document.documentElement).getPropertyValue('--line') || '#e3efe8'";
       navlinks.style.borderRadius = '12px';
     });
 
@@ -372,7 +349,7 @@
       });
     });
 
-    // Traducciones ES/EN/PT (puedes ampliar textos largos luego)
+    // Traducciones ES/EN/PT
     const I18N = {
       es: {
         'nav.about':'Sobre mí','nav.skills':'Habilidades','nav.education':'Formación','nav.experience':'Experiencia','nav.research':'Investigación','nav.volunteering':'Voluntariado','nav.talks':'Conferencias','nav.contact':'Contacto',
@@ -381,19 +358,10 @@
         'skills.languagesLabel':'Idiomas:','skills.languagesValue':'Español (Nativo), Inglés (B1), Portugués (B2)','skills.codingLabel':'Programación:','skills.cloudLabel':'Nube:',
         'interests.modeling':'Modelación Matemática','interests.linalg':'Álgebra Lineal Numérica','interests.numerical':'Análisis Numérico',
         'edu.csYears':'2025 — Presente','edu.mathYears':'2019 — 2025',
-        'exp.role1':'Analista de Datos Junior — Universidad Nacional de Colombia','exp.role1When':'Septiembre 2025 — Presente','exp.role1Desc':'Modelo GIS–MCDA con datos de IDECA y entidades distritales para cuantificar biomasa urbana (podas, plazas, colegios), estimar potencial energético, mapear zonas óptimas para biogás comunitario y proponer alternativas tecnológicas sostenibles.','exp.biogas':'Biogás',
-        'exp.role2':'Tutora de Matemáticas — Universidad Nacional de Colombia','exp.role2When':'Agosto 2025 — Presente','exp.role2Desc':'Apoyo académico en asignaturas básicas para estudiantes de diversos programas. Orientación personalizada y formación pedagógica estructurada.',
-        'exp.role3':'Tutora de Matemáticas — Universidad Nacional de Colombia','exp.role3When':'Abril 2025 — Agosto 2025','exp.role3Desc':'Tutorías en cursos nivelatorios, apoyo en aula y acompañamiento didáctico junto a docentes.',
-        'exp.role4':'Analista de Datos Junior — Universidad Nacional de Colombia','exp.role4When':'Septiembre 2024 — Diciembre 2024','exp.role4Desc':'Proyecto “Modelo matemático para la gestión del agua en La Mojana”. Modelos de IA basados en grafos, integración de datos climáticos con Python y servicios en la nube; análisis y documentación técnica.',
-        'exp.role5':'Programadora Junior en Julia — Universidad Nacional de Colombia','exp.role5When':'Noviembre 2023 — Septiembre 2024','exp.role5Desc':'Laboratorio Virtual de Matemáticas y Ciencias de la Computación: desarrollo del sitio del laboratorio y cuadernos en Julia como material complementario.','exp.teaching':'Docencia',
-        'res.role1':'Asistente de Investigación — Seminario de procesamiento de imágenes','res.role1When':'Octubre 2024 — Presente','res.role1Desc':'Image inpainting, variación total y métodos de reconstrucción/transformación; combinación de teoría matemática con implementación en Julia y Python.',
-        'res.role2':'Asistente de Investigación — Grupo de computación científica','res.role2When':'Agosto 2023 — Agosto 2024','res.role2Desc':'Métodos multiescala generalizados (Efendiev & Galvis, 2009) aplicados a problemas prácticos; nuevas variantes para mejorar la aproximación.',
-        'vol.role1':'Tutora — Círculos Matemáticos','vol.role1When':'Marzo 2023 — Junio 2024','vol.role1Desc':'Tutorías a estudiantes de bachillerato (Sociedad Colombiana de Matemáticas), fomentando interés y comprensión de las matemáticas.',
-        'vol.role2':'Tutora de Matemáticas — Programa de Apoyo Académico Covid-19','vol.role2When':'Marzo 2021 — Febrero 2022','vol.role2Desc':'Tutorías personalizadas en Matemáticas Básicas, Cálculo (Dif./Int./Vectorial) y EDO.',
-        'talks.habanaWhen':'La Habana, Cuba — Junio 09–20, 2025','talks.habanaDesc':'Fundamentos matemáticos de modelos biológicos (FEM, volúmenes finitos) con prácticas.',
-        'talks.aiWhen':'Bogotá, Colombia — Abril 03, 2025','talks.aiDesc':'Avances y tendencias en IA; charlas y networking profesional.',
-        'talks.mapiWhen':'Bucaramanga, Colombia — Junio 12–14, 2024','talks.mapiDesc':'Charla: “Soluciones al problema de difusión con interfaz fractal de la curva de Koch”.',
-        'talks.popayanWhen':'Popayán, Colombia — Julio 24 – Agosto 04, 2023','talks.popayanDesc':'Fundamentos de isogenias en curvas elípticas y su implementación en criptografía.'
+        'talks.habanaWhen':'La Habana, Cuba — Junio 09–20, 2025','talks.habanaDesc':'Fundamentos de modelos biológicos (FEM, volúmenes finitos) con prácticas.',
+        'talks.aiWhen':'Bogotá, Colombia — Abril 03, 2025','talks.aiDesc':'Avances y tendencias en IA; charlas y networking.',
+        'talks.mapiWhen':'Bucaramanga, Colombia — Junio 12–14, 2024','talks.mapiDesc':'“Soluciones al problema de difusión con interfaz fractal de la curva de Koch”.',
+        'talks.popayanWhen':'Popayán, Colombia — Julio 24 – Agosto 04, 2023','talks.popayanDesc':'Isogenias en curvas elípticas y su implementación en criptografía.'
       },
       en: {
         'nav.about':'About me','nav.skills':'Skills','nav.education':'Education','nav.experience':'Experience','nav.research':'Research','nav.volunteering':'Volunteering','nav.talks':'Talks','nav.contact':'Contact',
@@ -402,19 +370,10 @@
         'skills.languagesLabel':'Languages:','skills.languagesValue':'Spanish (Native), English (B1), Portuguese (B2)','skills.codingLabel':'Programming:','skills.cloudLabel':'Cloud:',
         'interests.modeling':'Mathematical Modeling','interests.linalg':'Numerical Linear Algebra','interests.numerical':'Numerical Analysis',
         'edu.csYears':'2025 — Present','edu.mathYears':'2019 — 2025',
-        'exp.role1':'Junior Data Analyst — National University of Colombia','exp.role1When':'September 2025 — Present','exp.role1Desc':'GIS–MCDA model using IDECA and district datasets to quantify urban biomass (tree pruning, markets, schools), estimate energy potential, map suitable zones for community biogas, and propose sustainable tech alternatives.','exp.biogas':'Biogas',
-        'exp.role2':'Math Tutor — National University of Colombia','exp.role2When':'August 2025 — Present','exp.role2Desc':'Academic support for foundational math courses with personalized mentoring and structured pedagogical training.',
-        'exp.role3':'Math Tutor — National University of Colombia','exp.role3When':'April 2025 — August 2025','exp.role3Desc':'Leveling-course tutoring, in-class support, and didactic assistance with instructors.',
-        'exp.role4':'Junior Data Analyst — National University of Colombia','exp.role4When':'September 2024 — December 2024','exp.role4Desc':'“Mathematical model for water management in La Mojana”: graph-based AI models, climate-data integration with Python and cloud services; analysis and technical documentation.',
-        'exp.role5':'Junior Julia Programmer — National University of Colombia','exp.role5When':'November 2023 — September 2024','exp.role5Desc':'Virtual Lab of Mathematics & CS: lab website and Julia notebooks as course materials.','exp.teaching':'Teaching',
-        'res.role1':'Research Assistant — Image Processing Seminar','res.role1When':'October 2024 — Present','res.role1Desc':'Image inpainting, total variation, and reconstruction/transform methods; mathematical theory + Julia/Python implementation.',
-        'res.role2':'Research Assistant — Scientific Computing Group','res.role2When':'August 2023 — August 2024','res.role2Desc':'Generalized multiscale methods (Efendiev & Galvis, 2009) applied to practical problems; proposed variants to improve approximation.',
-        'vol.role1':'Tutor — Mathematical Circles','vol.role1When':'March 2023 — June 2024','vol.role1Desc':'Tutoring for high-school students (Colombian Mathematical Society) to foster interest in mathematics.',
-        'vol.role2':'Math Tutor — Academic Support Program Covid-19','vol.role2When':'March 2021 — February 2022','vol.role2Desc':'Personalized tutoring in Basic Math, Calculus (Diff./Int./Vector) and ODEs.',
-        'talks.habanaWhen':'Havana, Cuba — June 09–20, 2025','talks.habanaDesc':'Mathematical foundations of biological models (FEM, finite volumes) with practice.',
-        'talks.aiWhen':'Bogotá, Colombia — April 03, 2025','talks.aiDesc':'AI trends and advances; talks and professional networking.',
-        'talks.mapiWhen':'Bucaramanga, Colombia — June 12–14, 2024','talks.mapiDesc':'Talk: “Solutions to the diffusion problem with a Koch-curve fractal interface”.',
-        'talks.popayanWhen':'Popayán, Colombia — July 24 – August 04, 2023','talks.popayanDesc':'Foundations of isogenies in elliptic curves and crypto implementations.'
+        'talks.habanaWhen':'Havana, Cuba — June 09–20, 2025','talks.habanaDesc':'Foundations of biological models (FEM, finite volumes) with practice.',
+        'talks.aiWhen':'Bogotá, Colombia — April 03, 2025','talks.aiDesc':'AI trends and advances; talks and networking.',
+        'talks.mapiWhen':'Bucaramanga, Colombia — June 12–14, 2024','talks.mapiDesc':'“Solutions to the diffusion problem with a Koch-curve fractal interface”.',
+        'talks.popayanWhen':'Popayán, Colombia — July 24 – August 04, 2023','talks.popayanDesc':'Isogenies in elliptic curves and crypto implementations.'
       },
       pt: {
         'nav.about':'Sobre mim','nav.skills':'Habilidades','nav.education':'Formação','nav.experience':'Experiência','nav.research':'Pesquisa','nav.volunteering':'Voluntariado','nav.talks':'Conferências','nav.contact':'Contato',
@@ -423,19 +382,10 @@
         'skills.languagesLabel':'Idiomas:','skills.languagesValue':'Espanhol (Nativo), Inglês (B1), Português (B2)','skills.codingLabel':'Programação:','skills.cloudLabel':'Nuvem:',
         'interests.modeling':'Modelagem Matemática','interests.linalg':'Álgebra Linear Numérica','interests.numerical':'Análise Numérica',
         'edu.csYears':'2025 — Presente','edu.mathYears':'2019 — 2025',
-        'exp.role1':'Analista de Dados Júnior — Universidade Nacional da Colômbia','exp.role1When':'Setembro 2025 — Presente','exp.role1Desc':'Modelo GIS–MCDA com dados da IDECA e de órgãos distritais para quantificar biomassa urbana (poda, mercados, escolas), estimar potencial energético, mapear zonas para biogás comunitário e propor alternativas tecnológicas sustentáveis.','exp.biogas':'Biogás',
-        'exp.role2':'Tutora de Matemática — Universidade Nacional da Colômbia','exp.role2When':'Agosto 2025 — Presente','exp.role2Desc':'Apoio acadêmico em disciplinas básicas, com orientação personalizada e formação pedagógica estruturada.',
-        'exp.role3':'Tutora de Matemática — Universidade Nacional da Colômbia','exp.role3When':'Abril 2025 — Agosto 2025','exp.role3Desc':'Monitoria em cursos de nivelamento, apoio em sala e colaboração didática com docentes.',
-        'exp.role4':'Analista de Dados Júnior — Universidade Nacional da Colômbia','exp.role4When':'Setembro 2024 — Dezembro 2024','exp.role4Desc':'“Modelo matemático para a gestão da água em La Mojana”: IA baseada em grafos, integração de dados climáticos com Python e nuvem; análise e documentação técnica.',
-        'exp.role5':'Programadora Júnior em Julia — Universidade Nacional da Colômbia','exp.role5When':'Novembro 2023 — Setembro 2024','exp.role5Desc':'Laboratório Virtual de Matemática e Computação: site do laboratório e notebooks em Julia como material didático.','exp.teaching':'Docência',
-        'res.role1':'Assistente de Pesquisa — Seminário de processamento de imagens','res.role1When':'Outubro 2024 — Presente','res.role1Desc':'Image inpainting, variação total e métodos de reconstrução/transformação; teoria matemática + implementação em Julia e Python.',
-        'res.role2':'Assistente de Pesquisa — Grupo de computação científica','res.role2When':'Agosto 2023 — Agosto 2024','res.role2Desc':'Métodos multiescala generalizados (Efendiev & Galvis, 2009) aplicados a problemas práticos; novas variantes para melhor aproximação.',
-        'vol.role1':'Tutora — Círculos Matemáticos','vol.role1When':'Março 2023 — Junho 2024','vol.role1Desc':'Tutorias para estudantes do ensino médio (Sociedade Colombiana de Matemática), incentivando o interesse em matemática.',
-        'vol.role2':'Tutora de Matemática — Programa de Apoio Acadêmico Covid-19','vol.role2When':'Março 2021 — Fevereiro 2022','vol.role2Desc':'Tutorias em Matemática Básica, Cálculo (Dif./Int./Vetorial) e EDO.',
-        'talks.habanaWhen':'Havana, Cuba — 09–20 de junho de 2025','talks.habanaDesc':'Fundamentos matemáticos de modelos biológicos (FEM, volumes finitos) com práticas.',
+        'talks.habanaWhen':'Havana, Cuba — 09–20 de junho de 2025','talks.habanaDesc':'Fundamentos de modelos biológicos (FEM, volumes finitos) com práticas.',
         'talks.aiWhen':'Bogotá, Colômbia — 03 de abril de 2025','talks.aiDesc':'Tendências e avanços em IA; palestras e networking.',
-        'talks.mapiWhen':'Bucaramanga, Colômbia — 12–14 de junho de 2024','talks.mapiDesc':'Palestra: “Soluções do problema de difusão com interface fractal da curva de Koch”.',
-        'talks.popayanWhen':'Popayán, Colômbia — 24 de julho – 04 de agosto de 2023','talks.popayanDesc':'Fundamentos de isogenias em curvas elípticas e implementações em criptografia.'
+        'talks.mapiWhen':'Bucaramanga, Colômbia — 12–14 de junho de 2024','talks.mapiDesc':'“Soluções do problema de difusão com interface fractal da curva de Koch”.',
+        'talks.popayanWhen':'Popayán, Colômbia — 24 de julho – 04 de agosto de 2023','talks.popayanDesc':'Isogenias em curvas elípticas e implementações em criptografia.'
       }
     };
 
@@ -445,7 +395,6 @@
         const key = el.getAttribute('data-i18n');
         if(dict[key]) el.textContent = dict[key];
       });
-      // actualizar atributo lang del html
       document.documentElement.lang = lang;
     }
 
