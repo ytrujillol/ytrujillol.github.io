@@ -1,132 +1,304 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yessica Trujillo - CV</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yessica Trujillo — Matemática</title>
+  <meta name="description" content="CV de Yessica Vanessa Trujillo Ladino — Matemática, investigación y datos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1020;           /* fondo oscuro azulado */
+      --surface: #131429;      /* panel principal */
+      --elev: #17183a;         /* panel elevado */
+      --text: #f4f7fb;         /* texto principal */
+      --muted:#b6bfd3;         /* texto secundario */
+      --line: #282a52;         /* bordes */
+      --accent:#7bdcb5;        /* menta */
+      --accent-2:#8ab4f8;      /* azul suave */
+      --danger:#ff6b6b;
+      --radius-lg:18px; --radius-md:12px; --radius-sm:10px;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 600px at 100% -10%, rgba(123,220,181,.09), transparent 40%),
+                                  radial-gradient(1000px 500px at -10% 120%, rgba(138,180,248,.09), transparent 40%),
+                                  var(--bg);
+      color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased; line-height:1.6;
+    }
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+         background:rgba(15,16,32,.65); border-bottom:1px solid var(--line)}
+    .nav .wrap{max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; gap:20px}
+    .logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:700}
+    .logo .flag{font-size:18px}
+    .logo .brand{font-size:16px}
+    .navlinks{margin-left:auto; display:flex; gap:18px}
+    .navlinks a{color:var(--muted); text-decoration:none; font-weight:500}
+    .navlinks a:hover{color:var(--text)}
+    .hamb{display:none; margin-left:auto; cursor:pointer; font-size:22px}
+
+    /* HERO */
+    .hero{max-width:1200px; margin:0 auto; padding:48px 20px 24px; display:grid; gap:22px; align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(123,220,181,.08), rgba(138,180,248,.08)), var(--surface);
+               border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 6px; font-size: clamp(28px, 5vw, 40px)}
+    .hero .subtitle{margin:0 0 14px; color:var(--muted); font-weight:500}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .chip{background:#191a3a; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-size:14px; color:#dfe6f7}
+    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
+         background:var(--elev); color:var(--text); text-decoration:none; font-weight:600}
+    .btn.primary{background:linear-gradient(90deg, var(--accent), var(--accent-2)); color:#0b1020}
+
+    /* SECTIONS */
+    .section{max-width:1200px; margin:18px auto; padding:0 20px}
+    .title{display:flex; align-items:center; gap:10px; font-size:20px; margin:0 0 14px}
+    .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 18px var(--accent)}
+    .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:20px}
+    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:16px}
+    .col-6{grid-column: span 6}
+    .col-12{grid-column: span 12}
+
+    .list{list-style:none; margin:0; padding:0}
+    .list li{background:#17183a; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin:6px 0}
+
+    /* TIMELINE */
+    .timeline{position:relative}
+    .timeline::before{content:""; position:absolute; left:14px; top:0; bottom:0; width:2px; background:#272a56}
+    .t{position:relative; padding-left:42px; margin:18px 0}
+    .t::before{content:""; position:absolute; left:7px; top:6px; width:16px; height:16px; border-radius:50%;
+               background:var(--surface); border:2px solid var(--accent-2); box-shadow:0 0 0 4px rgba(138,180,248,.10)}
+    .t h3{margin:0; font-size:16px}
+    .t .meta{display:flex; gap:8px; flex-wrap:wrap; color:var(--muted); font-size:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+    .tag{font-size:12px; padding:6px 10px; background:#181a3a; border:1px solid var(--line); border-radius:999px; color:#dfe6ee}
+
+    /* FOOTER */
+    footer{max-width:1200px; margin:30px auto 24px; padding:0 20px; text-align:center; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns:repeat(6, 1fr)}
+      .col-6{grid-column:span 6}
+      .navlinks{display:none}
+      .hamb{display:block}
+    }
+    @media (max-width: 640px){
+      .hero-card{padding:22px}
+    }
+  </style>
 </head>
 <body>
-  <!-- ENCABEZADO -->
-  <header class="header">
-    <div class="container">
-      <h1>Yessica Vanessa Trujillo Ladino</h1>
-      <p class="tagline">Matemática</p>
-      <ul class="personal-info">
-        <li>Email: <a href="mailto:ytrujillol@unal.edu.co">ytrujillol@unal.edu.co</a></li>
-        <li>Teléfono: +57 3022177096</li>
-        <li>Ubicación: Bogotá, Colombia</li>
-        <li><a href="https://www.linkedin.com/in/yessica-vanessa-trujillo-ladino-4a996a239" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/ytrujillol" target="_blank">GitHub</a></li>
-      </ul>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="logo"><span class="flag">🌞 🇨🇴</span><span class="brand">Yessica Trujillo</span></a>
+      <nav class="navlinks">
+        <a href="#sobre">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacion">Formación</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#investigacion">Investigación</a>
+        <a href="#voluntariado">Voluntariado</a>
+        <a href="#conferencias">Conferencias</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="hamb" id="hamb">☰</div>
     </div>
   </header>
 
-  <main class="container">
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="hero-card">
+      <h1>Yessica Vanessa Trujillo Ladino</h1>
+      <p class="subtitle">Matemática · Bogotá, Colombia</p>
+      <div class="chips">
+        <span class="chip">✉️ <a href="mailto:ytrujillol@unal.edu.co" style="color:inherit;text-decoration:none">ytrujillol@unal.edu.co</a></span>
+        <span class="chip">📞 <a href="tel:+573022177096" style="color:inherit;text-decoration:none">+57 302 217 7096</a></span>
+        <span class="chip">🔗 <a href="https://www.linkedin.com/in/yessica-vanessa-trujillo-ladino-4a996a239" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">LinkedIn</a></span>
+        <span class="chip">💻 <a href="https://github.com/ytrujillol" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">GitHub</a></span>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="#contacto">Contactar</a>
+        <a class="btn" href="#experiencia">Ver Experiencia</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- HABILIDADES -->
-    <section>
-      <h2>Habilidades</h2>
-      <ul>
-        <li><strong>Idiomas:</strong> Español (Nativo), Inglés (B1), Portugués (B2)</li>
-        <li><strong>Lenguajes de Programación:</strong> Julia, MATLAB, Python, C++, LaTeX</li>
-        <li><strong>Experiencia en Nube:</strong> AWS (EC2, S3, Lambda)</li>
-      </ul>
-    </section>
+  <!-- HABILIDADES / INTERESES -->
+  <section id="habilidades" class="section">
+    <h2 class="title"><span class="dot"></span> Habilidades e Intereses</h2>
+    <div class="grid">
+      <div class="col-6 card">
+        <h3>Habilidades</h3>
+        <ul class="list">
+          <li><strong>Idiomas:</strong> Español (Nativo), Inglés (B1), Portugués (B2)</li>
+          <li><strong>Programación:</strong> Julia, MATLAB, Python, C++, LaTeX</li>
+          <li><strong>Nube:</strong> AWS (EC2, S3, Lambda)</li>
+        </ul>
+      </div>
+      <div class="col-6 card">
+        <h3>Intereses de investigación</h3>
+        <ul class="list">
+          <li>Modelación Matemática</li>
+          <li>Álgebra Lineal Numérica</li>
+          <li>Análisis Numérico</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- INTERESES -->
-    <section>
-      <h2>Intereses de investigación</h2>
-      <ul>
-        <li>Modelación Matemática</li>
-        <li>Álgebra Lineal Numérica</li>
-        <li>Análisis Numérico</li>
-      </ul>
-    </section>
+  <!-- FORMACIÓN -->
+  <section id="formacion" class="section">
+    <h2 class="title"><span class="dot"></span> Formación Académica</h2>
+    <div class="card timeline">
+      <div class="t">
+        <h3>Ciencias de la Computación</h3>
+        <div class="meta"><span>Universidad Nacional de Colombia — Bogotá</span><span>•</span><span>2025 — Presente</span></div>
+      </div>
+      <div class="t">
+        <h3>Matemáticas</h3>
+        <div class="meta"><span>Universidad Nacional de Colombia — Bogotá</span><span>•</span><span>2019 — 2025</span></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FORMACIÓN -->
-    <section>
-      <h2>Formación Académica</h2>
-      <p><strong>Ciencias de la Computación</strong> – Universidad Nacional de Colombia (2025 – Presente)</p>
-      <p><strong>Matemáticas</strong> – Universidad Nacional de Colombia (2019 – 2025)</p>
-    </section>
+  <!-- EXPERIENCIA PROFESIONAL -->
+  <section id="experiencia" class="section">
+    <h2 class="title"><span class="dot"></span> Experiencia Profesional</h2>
+    <div class="card timeline">
+      <div class="t">
+        <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá</span><span>•</span><span>Septiembre 2025 — Presente</span></div>
+        <p>Modelo GIS–MCDA con datos de IDECA y entidades distritales para cuantificar biomasa urbana (podas, plazas, colegios), estimar potencial energético, mapear zonas óptimas para biogás comunitario y proponer alternativas tecnológicas sostenibles.</p>
+        <div class="tags"><span class="tag">GIS</span><span class="tag">MCDA</span><span class="tag">IDECA</span><span class="tag">Biogás</span></div>
+      </div>
+      <div class="t">
+        <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá</span><span>•</span><span>Agosto 2025 — Presente</span></div>
+        <p>Apoyo académico en asignaturas básicas para estudiantes de diversos programas. Orientación personalizada y formación pedagógica estructurada.</p>
+      </div>
+      <div class="t">
+        <h3>Tutora de Matemáticas — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá</span><span>•</span><span>Abril 2025 — Agosto 2025</span></div>
+        <p>Tutorías en cursos nivelatorios, apoyo en aula y acompañamiento didáctico junto a docentes.</p>
+      </div>
+      <div class="t">
+        <h3>Analista de Datos Junior — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá</span><span>•</span><span>Septiembre 2024 — Diciembre 2024</span></div>
+        <p>Proyecto “Modelo matemático para la gestión del agua en La Mojana”. Modelos de IA basados en grafos, integración de datos climáticos con Python y servicios en la nube; análisis y documentación técnica.</p>
+        <div class="tags"><span class="tag">Graph ML</span><span class="tag">Python</span><span class="tag">Cloud</span></div>
+      </div>
+      <div class="t">
+        <h3>Programadora Junior en Julia — Universidad Nacional de Colombia</h3>
+        <div class="meta"><span>Bogotá</span><span>•</span><span>Noviembre 2023 — Septiembre 2024</span></div>
+        <p>Laboratorio Virtual de Matemáticas y Ciencias de la Computación: desarrollo del sitio del laboratorio y cuadernos en Julia como material complementario. <a href="https://labmatecc.github.io/" target="_blank" rel="noopener">labmatecc.github.io</a></p>
+        <div class="tags"><span class="tag">Julia</span><span class="tag">Docencia</span><span class="tag">Web</span></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- EXPERIENCIA PROFESIONAL -->
-    <section>
-      <h2>Experiencia Profesional</h2>
-      <article>
-        <h3>Analista de Datos Junior – Universidad Nacional de Colombia</h3>
-        <p><em>Bogotá, Septiembre 2025 – Presente</em></p>
-        <p>Desarrollo de modelo GIS–MCDA para cuantificar biomasa urbana, estimación del potencial energético y propuestas sostenibles de biogás comunitario.</p>
-      </article>
-      <article>
-        <h3>Tutora de Matemáticas – Universidad Nacional de Colombia</h3>
-        <p><em>Bogotá, Agosto 2025 – Presente</em></p>
-        <p>Apoyo académico en asignaturas básicas a estudiantes de distintos programas de pregrado, con enfoque en tutorías personalizadas y pedagógicas.</p>
-      </article>
-      <article>
-        <h3>Tutora de Matemáticas – Universidad Nacional de Colombia</h3>
-        <p><em>Bogotá, Abril 2025 – Agosto 2025</em></p>
-        <p>Tutorías personalizadas en cursos nivelatorios de matemáticas básicas, apoyo en aula y estrategias de enseñanza junto a docentes.</p>
-      </article>
-      <article>
-        <h3>Analista de Datos Junior – Universidad Nacional de Colombia</h3>
-        <p><em>Bogotá, Septiembre 2024 – Diciembre 2024</em></p>
-        <p>Trabajo en el proyecto “Modelo matemático para la gestión del agua en La Mojana”: integración de datos climáticos con Python y servicios en la nube.</p>
-      </article>
-      <article>
-        <h3>Programadora Junior en Julia – Universidad Nacional de Colombia</h3>
-        <p><em>Bogotá, Noviembre 2023 – Septiembre 2024</em></p>
-        <p>Desarrollo de página web y cuadernos en Julia como material complementario para cursos del Departamento de Matemáticas. <a href="https://labmatecc.github.io/" target="_blank">Ver sitio</a></p>
-      </article>
-    </section>
+  <!-- INVESTIGACIÓN -->
+  <section id="investigacion" class="section">
+    <h2 class="title"><span class="dot"></span> Experiencia en Investigación</h2>
+    <div class="card timeline">
+      <div class="t">
+        <h3>Asistente de Investigación — Seminario de procesamiento de imágenes</h3>
+        <div class="meta"><span>Universidad Nacional de Colombia</span><span>•</span><span>Octubre 2024 — Presente</span></div>
+        <p>Image inpainting, variación total y métodos de reconstrucción/transformación; combinación de teoría matemática con implementación en Julia y Python.</p>
+      </div>
+      <div class="t">
+        <h3>Asistente de Investigación — Grupo de computación científica</h3>
+        <div class="meta"><span>Universidad Nacional de Colombia</span><span>•</span><span>Agosto 2023 — Agosto 2024</span></div>
+        <p>Métodos multiescala generalizados (Efendiev &amp; Galvis, 2009) aplicados a problemas prácticos; nuevas variantes para mejorar la aproximación.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- INVESTIGACIÓN -->
-    <section>
-      <h2>Experiencia en Investigación</h2>
-      <article>
-        <h3>Asistente de Investigación – Seminario procesamiento de imágenes</h3>
-        <p><em>Universidad Nacional de Colombia, Octubre 2024 – Presente</em></p>
-        <p>Investigación en image inpainting, variación total y reconstrucción de imágenes con Julia y Python.</p>
-      </article>
-      <article>
-        <h3>Asistente de Investigación – Grupo de Computación Científica</h3>
-        <p><em>Universidad Nacional de Colombia, Agosto 2023 – Agosto 2024</em></p>
-        <p>Trabajo de grado sobre métodos multiescala generalizados aplicados a problemas prácticos en análisis numérico.</p>
-      </article>
-    </section>
+  <!-- VOLUNTARIADO -->
+  <section id="voluntariado" class="section">
+    <h2 class="title"><span class="dot"></span> Experiencia de Voluntariado</h2>
+    <div class="card timeline">
+      <div class="t">
+        <h3>Tutora — Círculos Matemáticos</h3>
+        <div class="meta"><span>Universidad Nacional de Colombia — Bogotá</span><span>•</span><span>Marzo 2023 — Junio 2024</span></div>
+        <p>Tutorías a estudiantes de bachillerato (Sociedad Colombiana de Matemáticas), fomentando interés y comprensión de las matemáticas.</p>
+      </div>
+      <div class="t">
+        <h3>Tutora de Matemáticas — Programa de Apoyo Académico Covid-19</h3>
+        <div class="meta"><span>Bogotá, Colombia</span><span>•</span><span>Marzo 2021 — Febrero 2022</span></div>
+        <p>Tutorías personalizadas en Matemáticas Básicas, Cálculo (Dif./Int./Vectorial) y EDO.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- VOLUNTARIADO -->
-    <section>
-      <h2>Experiencia de Voluntariado</h2>
-      <article>
-        <h3>Tutora – Círculos Matemáticos</h3>
-        <p><em>Bogotá, Marzo 2023 – Junio 2024</em></p>
-        <p>Tutorías a estudiantes de bachillerato en programa de la Sociedad Colombiana de Matemáticas.</p>
-      </article>
-      <article>
-        <h3>Tutora de Matemáticas – Programa de Apoyo Académico Covid-19</h3>
-        <p><em>Bogotá, Marzo 2021 – Febrero 2022</em></p>
-        <p>Tutorías personalizadas en Matemáticas Básicas, Cálculo y Ecuaciones Diferenciales.</p>
-      </article>
-    </section>
+  <!-- CONFERENCIAS -->
+  <section id="conferencias" class="section">
+    <h2 class="title"><span class="dot"></span> Conferencias Asistidas</h2>
+    <div class="grid">
+      <div class="col-6 card">
+        <h3>Escuela CIMPA — Mathematical Models in Biology and PDEs</h3>
+        <p class="muted">La Habana, Cuba — Junio 09–20, 2025</p>
+        <p>Fundamentos matemáticos de modelos biológicos (FEM, volúmenes finitos) con prácticas.</p>
+      </div>
+      <div class="col-6 card">
+        <h3>AI Day</h3>
+        <p class="muted">Bogotá, Colombia — Abril 03, 2025</p>
+        <p>Avances y tendencias en IA; charlas y networking profesional.</p>
+      </div>
+      <div class="col-6 card">
+        <h3>MAPI 3</h3>
+        <p class="muted">Bucaramanga, Colombia — Junio 12–14, 2024</p>
+        <p>Charla: “Soluciones al problema de difusión con interfaz fractal de la curva de Koch”.</p>
+      </div>
+      <div class="col-6 card">
+        <h3>Escuela CIMPA — Isogenies &amp; Cryptography</h3>
+        <p class="muted">Popayán, Colombia — Julio 24 – Agosto 04, 2023</p>
+        <p>Fundamentos de isogenias en curvas elípticas y su implementación en criptografía.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONFERENCIAS -->
-    <section>
-      <h2>Conferencias Asistidas</h2>
-      <ul>
-        <li><strong>CIMPA School – Matemáticas y Biología</strong> (La Habana, Cuba, Junio 2025)</li>
-        <li><strong>AI Day</strong> (Bogotá, Abril 2025)</li>
-        <li><strong>MAPI 3</strong> (Bucaramanga, Junio 2024)</li>
-        <li><strong>CIMPA School – Criptografía</strong> (Popayán, Julio 2023)</li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- PIE -->
   <footer>
-    <p>&copy; 2025 Yessica Vanessa Trujillo Ladino</p>
+    <p>© 2025 · Yessica Vanessa Trujillo Ladino</p>
   </footer>
+
+  <script>
+    // Menú móvil básico y scroll suave
+    const hamb = document.getElementById('hamb');
+    const navlinks = document.querySelector('.navlinks');
+    hamb?.addEventListener('click', ()=>{
+      const open = navlinks.style.display === 'flex';
+      navlinks.style.display = open ? 'none' : 'flex';
+      navlinks.style.flexDirection = 'column';
+      navlinks.style.gap = '12px';
+      navlinks.style.background = 'rgba(15,16,32,.95)';
+      navlinks.style.position = 'absolute';
+      navlinks.style.top = '56px';
+      navlinks.style.right = '20px';
+      navlinks.style.padding = '12px 14px';
+      navlinks.style.border = '1px solid var(--line)';
+      navlinks.style.borderRadius = '12px';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+          if(window.innerWidth<980){ navlinks.style.display='none'; }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
